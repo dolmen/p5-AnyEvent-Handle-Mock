@@ -110,6 +110,10 @@ missing, the received data will be the return value of the method.
 
 =back
 
+=head1 SEE ALSO
+
+L<AnyEvent::MockTCPServer>
+
 =head1 AUTHOR
 
 Olivier Mengué, L<mailto:dolmen@cpan.org>
