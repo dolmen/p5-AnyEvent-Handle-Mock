@@ -1,0 +1,5 @@
+/.build/
+!.gitignore
+/cover_db/
+/nytprof*
+/AnyEvent-Handle-Mock-*
