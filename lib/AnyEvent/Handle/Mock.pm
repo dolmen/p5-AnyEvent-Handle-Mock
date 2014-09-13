@@ -22,7 +22,18 @@ sub fh
 
 sub feed
 {
-    shift->[1]->push_write(@_)
+    my $self = shift;
+
+    $self->[1]->push_write(@_);
+
+    # Run the event loop, in hope the read will
+    # happen and the callback will be called
+    my $cv = AE::cv;
+    AE::postpone {
+	AE::postpone { $cv->send }
+    };
+    $cv->recv;
+    ()
 }
 
 sub pump
